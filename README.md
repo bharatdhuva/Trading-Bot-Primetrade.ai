@@ -1,6 +1,6 @@
 # Binance Futures Testnet Trading Bot
 
-This is a simplified trading bot that can place MARKET and LIMIT orders on the Binance Futures Testnet (USDT-M) via direct REST API calls.
+This is a simplified trading bot that can place MARKET, LIMIT, and STOP_MARKET orders on the Binance Futures Testnet (USDT-M) via direct REST API calls.
 It comes with an interactive CLI utilizing `questionary` and `rich` for great UX, fulfilling the bonus requirements.
 
 ## Project Structure
@@ -27,7 +27,7 @@ trading_bot/
    ```bash
    # Windows
    python -m venv venv
-   .\\venv\\Scripts\\activate
+   .\venv\Scripts\activate
 
    # Mac/Linux
    python3 -m venv venv
@@ -51,19 +51,50 @@ Start the CLI application:
 python cli.py
 ```
 
-The app will prompt you continuously through interactive menus:
-1. Enter the Symbol (e.g., `BTCUSDT`)
-2. Select BUY or SELL side
-3. Select MARKET or LIMIT type
-4. Enter quantity (e.g., `0.005`)
-5. If LIMIT, enter the target price.
-6. A summary will appear where you can confirm or cancel.
+## Sample Output
+
+Here is an example of what the interactive CLI UX looks like when placing a trade:
+
+```text
+╭────────────────────────────────────────────────╮
+│ Welcome to Binance Futures Testnet Trading Bot │
+╰────────────────────────────────────────────────╯
+? Enter the trading symbol (e.g., BTCUSDT): BTCUSDT
+? Select order side: BUY                           
+? Select order type: MARKET          
+? Enter quantity (e.g., 0.05): 0.05
+                                   
+Order Summary Preview:
+Symbol: BTCUSDT
+Side: BUY
+Type: MARKET
+Quantity: 0.05
+? Do you want to place this order? Yes
+                  
+Order Request Successful!            
+          Order Response Details
+┏━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ Field         ┃ Value                  ┃
+┡━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━┩
+│ orderId       │ 13020177998            │
+│ symbol        │ BTCUSDT                │
+│ status        │ NEW                    │
+│ clientOrderId │ u4NlfUmexDI4VYQlYqd89p │
+│ price         │ 0.00                   │
+│ origQty       │ 0.0500                 │
+│ executedQty   │ 0.0000                 │
+│ avgPrice      │ 0.00                   │
+│ type          │ MARKET                 │
+│ side          │ BUY                    │
+│ stopPrice     │ 0.00                   │
+└───────────────┴────────────────────────┘
+```
 
 *Log Verification*:
-To see the underlying HTTP requests and trace events, inspect the generated `bot.log` file in the root directory after running your first trade.
+To see the underlying HTTP requests and trace events, inspect the generated `bot.log` file in the root directory after running your trades.
 
 ## Assumptions
 - Only targeting Binance Testnet for USDT-M (base URL: `https://testnet.binancefuture.com`).
 - The user is manually managing virtual environments and dependency instantiation.
-- Only supporting Market and Limit order types for simplicity.
+- Only supporting Market, Limit and Stop_Market order types for simplicity.
 - Assuming `Good Till Cancelled (GTC)` implementation for all limit orders.
