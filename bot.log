@@ -1,0 +1,16 @@
+2026-04-03 16:25:15,207 - TradingBot - INFO - Placing MARKET order for 0.001 BTCUSDT (BUY)
+2026-04-03 16:25:15,208 - TradingBot - DEBUG - Sending POST request to /fapi/v1/order
+2026-04-03 16:25:15,766 - TradingBot - ERROR - HTTP error occurred: {'code': -4164, 'msg': "Order's notional must be no smaller than 100 (unless you choose reduce only)."}
+2026-04-03 16:25:15,767 - TradingBot - ERROR - Failed to place order: API Error: {'code': -4164, 'msg': "Order's notional must be no smaller than 100 (unless you choose reduce only)."}
+2026-04-03 16:25:15,769 - TradingBot - INFO - Placing LIMIT order for 0.001 BTCUSDT (BUY)
+2026-04-03 16:25:15,769 - TradingBot - DEBUG - Sending POST request to /fapi/v1/order
+2026-04-03 16:25:16,249 - TradingBot - ERROR - HTTP error occurred: {'code': -4164, 'msg': "Order's notional must be no smaller than 100 (unless you choose reduce only)."}
+2026-04-03 16:25:16,249 - TradingBot - ERROR - Failed to place order: API Error: {'code': -4164, 'msg': "Order's notional must be no smaller than 100 (unless you choose reduce only)."}
+2026-04-03 16:25:43,031 - TradingBot - INFO - Placing MARKET order for 0.05 BTCUSDT (BUY)
+2026-04-03 16:25:43,031 - TradingBot - DEBUG - Sending POST request to /fapi/v1/order
+2026-04-03 16:25:43,915 - TradingBot - DEBUG - Response: {'orderId': 13020122499, 'symbol': 'BTCUSDT', 'status': 'NEW', 'clientOrderId': '9qwFchlodKIcbDBuCd8y67', 'price': '0.00', 'avgPrice': '0.00', 'origQty': '0.0500', 'executedQty': '0.0000', 'cumQty': '0.0000', 'cumQuote': '0.000000', 'timeInForce': 'GTC', 'type': 'MARKET', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.00', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'MARKET', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'EXPIRE_MAKER', 'goodTillDate': 0, 'updateTime': 1775213743359}
+2026-04-03 16:25:43,917 - TradingBot - INFO - Order placed successfully: Order ID 13020122499
+2026-04-03 16:25:43,917 - TradingBot - INFO - Placing LIMIT order for 0.05 BTCUSDT (BUY)
+2026-04-03 16:25:43,917 - TradingBot - DEBUG - Sending POST request to /fapi/v1/order
+2026-04-03 16:25:44,519 - TradingBot - DEBUG - Response: {'orderId': 13020122506, 'symbol': 'BTCUSDT', 'status': 'NEW', 'clientOrderId': '2jFulPLJDZVnw7S3kwVkQu', 'price': '50000.00', 'avgPrice': '0.00', 'origQty': '0.0500', 'executedQty': '0.0000', 'cumQty': '0.0000', 'cumQuote': '0.000000', 'timeInForce': 'GTC', 'type': 'LIMIT', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.00', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'LIMIT', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'EXPIRE_MAKER', 'goodTillDate': 0, 'updateTime': 1775213743971}
+2026-04-03 16:25:44,521 - TradingBot - INFO - Order placed successfully: Order ID 13020122506
